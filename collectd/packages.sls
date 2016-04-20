@@ -8,7 +8,7 @@ collectd_additional_packages:
   pkg.installed:
     - pkgs:
   {%- for pkg in collectd_settings.additional_packages %}
-    {%- if string(pkg) == pkg %}
+    {%- if pkg|string == pkg %}
       - {{ pkg }}
     {%- else %}
       - {{ pkg.name }}{% if pkg.version is defined and pkg.version %}: '{{ pkg.version }}' {% endif %}
