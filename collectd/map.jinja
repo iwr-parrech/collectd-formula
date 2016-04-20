@@ -82,6 +82,13 @@
                 'interfaces': ['eth0'],
                 'IgnoreSelected': 'false'
             },
+            'ipmi': {
+                'Sensors': [],
+                'IgnoreSelected': 'false',
+                'NotifySensorAdd': 'false',
+                'NotifySensorRemove': 'false',
+                'NotifySensorNotPresent': 'false'
+            },
             'java': {
                 'host': 'localhost',
                 'port': '17264',
@@ -147,7 +154,7 @@
             'rrdtool': {
                 'datadir': '/var/lib/collectd/rrd',
                 'cacheflush': 120,
-                'writespersecond': 50 
+                'writespersecond': 50
             }
         }
     }
