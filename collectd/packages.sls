@@ -8,7 +8,11 @@ collectd_additional_packages:
   pkg.installed:
     - pkgs:
   {%- for pkg in collectd_settings.additional_packages %}
+    {%- if isinstance(pkg,str) %}
+      - {{ pkg }}
+    {%- else %}
       - {{ pkg.name }}{% if pkg.version is defined and pkg.version %}: '{{ pkg.version }}' {% endif %}
+    {%- endif %}
   {%- endfor %}
     - watch_in:
       - service: collectd-service
